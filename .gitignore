@@ -1,8 +1,9 @@
 .git*/
 
+
 # dependencies
 /node_modules
-
+/.history
 # testing
 /coverage
 /cypress/videos
