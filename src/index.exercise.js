@@ -8,17 +8,29 @@ import {Logo} from './components/logo'
 
 // 🐨 create an App component here and render the logo, the title ("Bookshelf"), a login button, and a register button.
 // 🐨 for fun, you can add event handlers for both buttons to alert that the button was clicked
+
+function register() {
+  alert('Register Clicked')
+}
+function login() {
+  alert('Login Clicked')
+}
+
 function App() {
   return (
     <div>
       <h2>Bookshelf</h2>
-      <Logo />
+      <Logo width="80" height="80" />
       <div>
         <label htmlFor="login">
-          <button id="login">login</button>
+          <button id="login" onClick={login}>
+            login
+          </button>
         </label>
         <label htmlFor="register">
-          <button id="register">register</button>
+          <button id="register" onClick={register}>
+            register
+          </button>
         </label>
       </div>
     </div>
