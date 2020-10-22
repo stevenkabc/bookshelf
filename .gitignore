@@ -31,3 +31,4 @@ public/extra-*
 # Allow people to make ignored files anywhere
 *.ignored.*
 ignored/
+.history/
