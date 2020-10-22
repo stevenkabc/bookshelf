@@ -15,7 +15,9 @@ function DiscoverBooksScreen() {
   // 🐨 add state for status ('idle', 'loading', or 'success'), data, and query
   const [status, setStatus] = React.useState('idle');
   const [data, setData] = React.useState();
+
   const [error, setError] = React.useState(false);
+
   const [query, setQuery] = React.useState('');
 
   // 🐨 you'll also notice that we don't want to run the search until the
@@ -36,6 +38,7 @@ function DiscoverBooksScreen() {
 
   React.useEffect(() => {
     if (!queried) {
+      console.log(`queried = ${queried}`);
       return;
     }
     setStatus('loading');

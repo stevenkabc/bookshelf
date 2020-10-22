@@ -13,11 +13,10 @@ function client(endpoint, customConfig = {}) {
   return window
     .fetch(`${process.env.REACT_APP_API_URL}/${endpoint}`, config)
     .then(async response => {
-      const data = await response.json();
       if (response.ok) {
-        return data;
+        const data = await response.json();
       } else {
-        return Promise.reject(data);
+        return Promise.reject(response);
       }
     });
 }

@@ -8,20 +8,19 @@ function client(endpoint, customConfig = {}) {
   // 💰 here's how to get the full URL: `${process.env.REACT_APP_API_URL}/${endpoint}`
   const config = {
     method: 'GET',
-    ...customConfig
-  };
+    ...customConfig,
+  }
   return window
     .fetch(`${process.env.REACT_APP_API_URL}/${endpoint}`, config)
     .then(async response => {
-      const data = await response.json();
       if (response.ok) {
-        return data;
+        const data = await response.json()
       } else {
-        return Promise.reject(data);
+        return Promise.reject()
       }
-    });
+    })
 }
-export {client};
+export {client}
 
 /*
 

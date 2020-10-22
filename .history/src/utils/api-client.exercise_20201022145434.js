@@ -17,7 +17,7 @@ function client(endpoint, customConfig = {}) {
       if (response.ok) {
         return data;
       } else {
-        return Promise.reject(data);
+        return Promise.reject(response);
       }
     });
 }

@@ -4,7 +4,8 @@ import React, {useState} from 'react';
 
 import './bootstrap';
 import Tooltip from '@reach/tooltip';
-import {FaSearch, FaTimes} from 'react-icons/fa';
+import {FaSearch} from 'react-icons/fa';
+import {FaTimes} from 'react-icons/fa';
 import {Input, BookListUL, Spinner} from './components/lib';
 import {BookRow} from './components/book-row';
 import {client} from 'utils/api-client';
@@ -13,10 +14,10 @@ import * as colors from './styles/colors';
 
 function DiscoverBooksScreen() {
   // 🐨 add state for status ('idle', 'loading', or 'success'), data, and query
-  const [status, setStatus] = React.useState('idle');
   const [data, setData] = React.useState();
-  const [error, setError] = React.useState(false);
   const [query, setQuery] = React.useState('');
+  const [status, setStatus] = React.useState('idle');
+  const [error, setError] = React.useState(false);
 
   // 🐨 you'll also notice that we don't want to run the search until the
   // user has submitted the form, so you'll need a boolean for that as well
@@ -36,6 +37,7 @@ function DiscoverBooksScreen() {
 
   React.useEffect(() => {
     if (!queried) {
+      console.log(`queried = ${queried}`);
       return;
     }
     setStatus('loading');
